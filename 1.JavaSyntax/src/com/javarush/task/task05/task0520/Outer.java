@@ -1,7 +1,7 @@
 package com.javarush.task.task05.task0520;
 
 public class Outer {
-    // Анонимный класс наследуется от от класса Demo
+    // Анонимный класс наследуется от класса Demo
 
     static Demo demo = new Demo() {
 
@@ -15,8 +15,9 @@ public class Outer {
         demo.show();
     }
 }
+
 class Demo {
-    public void show(){
+    public void show() {
         System.out.println("Метод суперкласса");
-}
+    }
 }
