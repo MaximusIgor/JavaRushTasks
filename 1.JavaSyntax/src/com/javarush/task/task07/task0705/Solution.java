@@ -19,6 +19,7 @@ public class Solution {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = Integer.parseInt(reader.readLine());
         }
+
         for (int i = 0; i < 10; i++) {
             small[i] = arr[i];
             small1[i] = arr[i + 10];
