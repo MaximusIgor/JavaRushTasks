@@ -21,15 +21,17 @@ public class Solution {
             strings.add(reader.readLine());
         }
         int max = strings.get(0).length();
-        for (int i = 0; i < strings.size(); i++){
+        for (int i = 0; i < strings.size(); i++) {
 
-            if (strings.get(i).length() >= max)
+            if (strings.get(i).length() >= max) {
                 max = strings.get(i).length();
+            }
         }
 
-        for (int i = 0; i < strings.size(); i++){
-            if (strings.get(i).length() == max){
-                System.out.println(strings.get(i));}
+        for (int i = 0; i < strings.size(); i++) {
+            if (strings.get(i).length() == max) {
+                System.out.println(strings.get(i));
+            }
         }
     }
 }
