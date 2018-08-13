@@ -22,6 +22,7 @@ public class Solution {
 
     public static ArrayList<String> fix(ArrayList<String> list) {
         //напишите тут ваш код
+
         ArrayList<String> list1 = new ArrayList<String>();
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).contains("р") ^ list.get(i).contains("л")) {
@@ -29,7 +30,7 @@ public class Solution {
                     list1.add(list.get(i));
                     list1.add(list.get(i));
                 }
-            } else{
+            } else {
                 list1.add(list.get(i));
             }
         }
