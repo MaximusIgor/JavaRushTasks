@@ -24,7 +24,7 @@ public class Solution {
         printList(secondary3);
 
         for (int i = 0; i < 20; i++) {
-            list.add(Integer.valueOf(reader.readLine()));
+            list.add(Integer.parseInt(reader.readLine()));
         }
 
         for (int i = 0; i < list.size(); i++) {
