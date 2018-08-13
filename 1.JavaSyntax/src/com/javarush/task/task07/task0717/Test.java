@@ -1,13 +1,10 @@
-package com.javarush.task.task07.task0716;
+package com.javarush.task.task07.task0717;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
-/* 
-Р или Л
-*/
-
-public class Solution {
-    public static void main(String[] args) throws Exception {
+public class Test {
+    public static void main(String[] args) throws IOException {
 
         ArrayList<String> list = new ArrayList<String>();
         list.add("роза"); //0
@@ -25,7 +22,7 @@ public class Solution {
         for (int i = 0; i <list.size() ; i++) {
             if (list.get(i).contains("л") && !(list.get(i).contains("р"))){
                 list.add(i,list.get(i));
-                i++;
+               i++;
             }
             else if (list.get(i).contains("р") && !list.get(i).contains("л")){
                 list.remove(list.get(i));
