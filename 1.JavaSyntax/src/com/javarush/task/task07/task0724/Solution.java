@@ -27,6 +27,19 @@ public class Solution {
         System.out.println(child.toString());
         System.out.println(child1.toString());
         System.out.println(child2.toString());
+
+//        ArrayList<Human> list = new ArrayList<Human>();
+//        list.add(new Human("Таня", false, 60));
+//        list.add(new Human("Сергей", true, 63));
+//        list.add(new Human("Таня", false, 62));
+//        list.add(new Human("Владимир", true, 68));
+//        list.add(new Human("Александр", true, 40, list.get(0), list.get(1)));
+//        list.add(new Human("Светлана", false, 39, list.get(2), list.get(3)));
+//        list.add(new Human("Алексей", true, 17, list.get(4), list.get(5)));
+//        list.add(new Human("Андрей", true, 11, list.get(4), list.get(5)));
+//        list.add(new Human("Елена", false, 7, list.get(4), list.get(5)));
+//        for (int i = 0; i < list.size(); i++) {
+//            System.out.println(list.get(i).toString());
     }
 
     public static class Human {
