@@ -9,24 +9,25 @@ public class ArraySortsByMethods {
     public static void main(String[] args) throws IOException {
         final int[] arr = new int[4];
 
-        dataInput(arr); // запрос ввода даных у юзера
+        dataInput(arr);
         insertionSorting(arr); // сортировка вставками
         sortingBubble(arr); // сортировка пузырьком
         selectionSorting(arr); // сортировка выборкой
-        System.out.println("Конец програмы!");
     }
 
     // заполнение массива данными с клавиатуры
 
     public static void dataInput(int[] ints) throws IOException {
 
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in)); // запрос ввода даных у юзера
-        for (int i = 0; i < ints.length; i++) {// проход по массиву
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        for (int i = 0; i < ints.length; i++) {
             System.out.print("Введите число: ");
-            ints[i] = Integer.parseInt(reader.readLine());//присвоение значений, индексам массива
+            ints[i] = Integer.parseInt(reader.readLine());
         }
-        System.out.println(Arrays.toString(ints));// вывод на экран заполненного массива
+        System.out.println();
+        System.out.println("Исходный массив: " + Arrays.toString(ints));
     }
+
 
     // сортировка вставками с пошаговым выводом на экран
 
@@ -34,16 +35,16 @@ public class ArraySortsByMethods {
 
         System.out.println("Сортировка вставками");
 
-        for (int i = 1; i < ints.length; i++) {// проход по массиву
-            int tmp = ints[i];
-            int j;
-            for (j = i - 1; j >= 0 && ints[j] < tmp; j--) {
-                ints[j + 1] = ints[j];
-                System.out.println(Arrays.toString(ints));
+        for (int k = 1; k < ints.length; k++) {
+            int newElement = ints[k];
+            int location = k - 1;
+            while (location >= 0 && ints[location] > newElement) {
+                ints[location + 1] = ints[location];
+                location--;
             }
-            ints[j + 1] = tmp;
+            ints[location + 1] = newElement;
+            System.out.println(Arrays.toString(ints));
         }
-        System.out.println(Arrays.toString(ints));
     }
 
     // сортировка пузырьком с пошаговым выводом на экран
@@ -54,7 +55,7 @@ public class ArraySortsByMethods {
         int tmp;
         for (int i = 0; i < ints.length; i++) {
             for (int j = 0; j < ints.length - 1; j++) {
-                if (ints[j] > ints[j + 1]) {
+                if (ints[j] < ints[j + 1]) {
                     tmp = ints[j];
                     ints[j] = ints[j + 1];
                     ints[j + 1] = tmp;
