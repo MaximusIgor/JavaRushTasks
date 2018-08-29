@@ -10,23 +10,24 @@ public class TheDate {
         int[] tomorrow;
         int[] yesterday;
 
-        do {//Запрашивать дату от пользователя до тех пор пока дата не будет введена верно
+        do {//Запрос даты от пользователя
             today = getDateFromUser();
         }
-        while (!isCorrectInput(today[n], today[m], today[g]));{
+        while (!isCorrectInput(today[n], today[m], today[g]));
+        {
 
             tomorrow = calcDayTomorrow(today[n], today[m], today[g]);
-            System.out.printf("Tomorrow will be: %d (n)day, %d (m)month, %d (g)year\n", tomorrow[0], tomorrow[1], tomorrow[2]);
+            System.out.printf("Завтра будет: %d (n)day, %d (m)month, %d (g)year\n", tomorrow[0], tomorrow[1], tomorrow[2]);
 
             yesterday = calcDayYesterday(today[n], today[m], today[g]);
-            System.out.printf("***************************************************" +
-                    "\nYesterday was: %d (n)day, %d (m)month, %d (g)year\n", yesterday[0], yesterday[1], yesterday[2]);
+            System.out.printf("______________________________________________________" +
+                    "\nВчера было: %d (n)day, %d (m)month, %d (g)year\n", yesterday[0], yesterday[1], yesterday[2]);
         }
     }
 
     static boolean isCorrectInput(int day, int month, int year) {//Метод для вычисления правильности ввода дней и месяцев
         if (day > daysInMonth(year, month) || day < 1 || month > 12 || month < 1) {
-            System.out.println("Sorry, entry is not correct. Please check DAY MONTH YEAR format and try again.");
+            System.out.println("Проверьте правильность введенных данных.");
             return false;
         } else return true;
     }
@@ -35,10 +36,10 @@ public class TheDate {
         int[] today = new int[3];
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Please type DAY MONTH YEAR:");
+        System.out.println("Введите день, месяц, год.Каждое значение с новой строки:");
         for (int i = 0; i < today.length; i++) {
             today[i] = sc.nextInt();
-       }
+        }
         return today;
     }
 
