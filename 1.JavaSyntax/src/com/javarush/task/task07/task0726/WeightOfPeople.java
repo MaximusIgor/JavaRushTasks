@@ -23,7 +23,7 @@ public class WeightOfPeople {
             eachHuman[i] = checkSyntaxSetValue();
             if (eachHuman[i] <= 0) {
                 System.err.println("***********************************************\n"
-                        + "Syntax error. Please enter weight(kg) of each group member from beginning."
+                        + "Ошибка! Введите корректный weight(kg) человека."
                         + "\n***********************************************");
                 i = -1;
             } else if (i == eachHuman.length - 1 && !hasFatHuman(eachHuman)) {
@@ -35,8 +35,8 @@ public class WeightOfPeople {
             }
         }
 
-        System.out.printf("\nСреднее число простых людей\n :%.1f", calcAverageOfPeople(eachHuman, ORDINARY_PEOPLE));
-        System.out.printf("\nAverage of fat people is :%.1f", calcAverageOfPeople(eachHuman, FAT_PEOPLE));
+        System.out.printf("\nСредняя масса обычных людей\n :%.1f", calcAverageOfPeople(eachHuman, ORDINARY_PEOPLE));
+        System.out.printf("\nСредняя масса полных людей :%.1f", calcAverageOfPeople(eachHuman, FAT_PEOPLE));
 
         System.out.printf("\n\n\n TEST AREA TEST AREA TEST AREA TEST AREA\n\n");
 
@@ -96,9 +96,7 @@ public class WeightOfPeople {
         return value;
     }
 
-
     //Test methods
-
 
     public static void testHasFatHuman() {//Test of mixed group ordinary and fat people. Test will answer "OK" if at least 1 member is heavier than 100kg
         float[] data = {97, 98, 99, 100, (float) 100.1, 101};
@@ -136,6 +134,5 @@ public class WeightOfPeople {
         if (calcAverageOfPeople(data, FAT_PEOPLE) == expectedResults)
             System.out.printf("testCalcAverageOfPeople_OnlyFatPeople method Test successful!\nTested method result = %f, expected result = %f", calcAverageOfPeople(data, FAT_PEOPLE), expectedResults);
         else System.out.println("Error");
-
     }
 }
