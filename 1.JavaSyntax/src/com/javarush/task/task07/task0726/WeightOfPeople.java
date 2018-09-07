@@ -11,19 +11,19 @@ public class WeightOfPeople {
 
         int sizeOfGroup = 0;
 
-        while (sizeOfGroup <= 0) {//Safely get size of group
+        while (sizeOfGroup <= 0) {
             System.out.printf("Введите кол-во человек в группе: ");
             sizeOfGroup = Math.round(checkSyntaxSetValue());
         }
 
-        float[] eachHuman = new float[sizeOfGroup];//Here will be stored weight of group members
+        float[] eachHuman = new float[sizeOfGroup];
 
         for (int i = 0; i < eachHuman.length; i++) {
             System.out.printf("Ведите вес человека %d из группы: ", i + 1);
             eachHuman[i] = checkSyntaxSetValue();
             if (eachHuman[i] <= 0) {
                 System.err.println("***********************************************\n"
-                        + "Ошибка! Введите корректный weight(kg) человека."
+                        + "Ошибка! Введите корректный вес(kg) человека."
                         + "\n***********************************************");
                 i = -1;
             } else if (i == eachHuman.length - 1 && !hasFatHuman(eachHuman)) {
@@ -38,18 +38,21 @@ public class WeightOfPeople {
         System.out.printf("\nСредняя масса обычных людей\n :%.1f", calcAverageOfPeople(eachHuman, ORDINARY_PEOPLE));
         System.out.printf("\nСредняя масса полных людей :%.1f", calcAverageOfPeople(eachHuman, FAT_PEOPLE));
 
-        System.out.printf("\n\n\n TEST AREA TEST AREA TEST AREA TEST AREA\n\n");
+        System.out.printf("\n\n\n Тестирование Тестирование Тестирование \n\n");
 
-        System.out.println("\n**********************************************\nTesting part. Method testHasFatHuman\n");
+        System.out.println("\n**********************************************\nЧасть тестирования. Метод testHasFatHuman\n");
         testHasFatHuman();
 
-        System.out.println("\n\n**********************************************\nTesting part. Method testCalcAverageOfPeople_FatPeople\n");
+        System.out.println("\n\n**********************************************\nЧасть тестирования. " +
+                "Метод testCalcAverageOfPeople_FatPeople\n");
         testCalcAverageOfPeople_FatPeople();
 
-        System.out.println("\n\n**********************************************\nTesting part. Method testCalcAverageOfPeople_OrdinaryPeople\n");
+        System.out.println("\n\n**********************************************\nTЧасть тестирования. " +
+                "Метод testCalcAverageOfPeople_OrdinaryPeople\n");
         testCalcAverageOfPeople_OrdinaryPeople();
 
-        System.out.println("\n\n**********************************************\nTesting part. Method testCalcAverageOfPeople_OnlyFatPeople\n");
+        System.out.println("\n\n**********************************************\nЧасть тестирования. " +
+                "Метод testCalcAverageOfPeople_OnlyFatPeople\n");
         testCalcAverageOfPeople_OnlyFatPeople();
     }
 
@@ -98,41 +101,45 @@ public class WeightOfPeople {
 
     //Test methods
 
-    public static void testHasFatHuman() {//Test of mixed group ordinary and fat people. Test will answer "OK" if at least 1 member is heavier than 100kg
+    public static void testHasFatHuman() {
         float[] data = {97, 98, 99, 100, (float) 100.1, 101};
         boolean expectedResults = true;
 
         if (hasFatHuman(data) == expectedResults)
-            System.out.printf("testHasFatHuman method Test successful!\nTested method result = %b, expected result = %b", hasFatHuman(data), expectedResults);
+            System.out.printf("testHasFatHuman method Test successful!\nTested method result = %b, " +
+                    "expected result = %b", hasFatHuman(data), expectedResults);
         else System.out.println("Error");
     }
 
-    public static void testCalcAverageOfPeople_FatPeople() {//Group of mixed ordinary and fat people. Method sort out fat people
+    public static void testCalcAverageOfPeople_FatPeople() {
         float[] data = {131, 29, 145, 2, 104, 122, 85, 26, 44, 111, 79};
 
         float expectedResults = (float) 122.6;
 
         if (calcAverageOfPeople(data, FAT_PEOPLE) == expectedResults)
-            System.out.printf("testCalcAverageOfPeople_FatPeople method Test successful!\nTested method result = %f, expected result = %f", calcAverageOfPeople(data, 2), expectedResults);
+            System.out.printf("testCalcAverageOfPeople_FatPeople method Test successful!\nTested method result = %f, " +
+                    "expected result = %f", calcAverageOfPeople(data, 2), expectedResults);
         else System.out.println("Error");
     }
 
-    public static void testCalcAverageOfPeople_OrdinaryPeople() {//Group of mixed ordinary and fat people. Method sort out ordinary people
+    public static void testCalcAverageOfPeople_OrdinaryPeople() {
         float[] data = {131, 29, 145, 2, 104, 122, 85, 26, 44, 111, 79};
 
         float expectedResults = (float) 44.16666667;
 
         if (calcAverageOfPeople(data, ORDINARY_PEOPLE) == expectedResults)
-            System.out.printf("testCalcAverageOfPeople_OrdinaryPeople method Test successful!\nTested method result = %f, expected result = %f", calcAverageOfPeople(data, ORDINARY_PEOPLE), expectedResults);
+            System.out.printf("testCalcAverageOfPeople_OrdinaryPeople method Test successful!\nTested method result = %f, " +
+                    "expected result = %f", calcAverageOfPeople(data, ORDINARY_PEOPLE), expectedResults);
         else System.out.println("Error");
     }
 
-    public static void testCalcAverageOfPeople_OnlyFatPeople() {//Group of fat people only. Method sort out fat people
+    public static void testCalcAverageOfPeople_OnlyFatPeople() {
         float[] data = {131, 145, 104, 122, 111};
         float expectedResults = (float) 122.6;
 
         if (calcAverageOfPeople(data, FAT_PEOPLE) == expectedResults)
-            System.out.printf("testCalcAverageOfPeople_OnlyFatPeople method Test successful!\nTested method result = %f, expected result = %f", calcAverageOfPeople(data, FAT_PEOPLE), expectedResults);
+            System.out.printf("testCalcAverageOfPeople_OnlyFatPeople method Test successful!\nTested method result = %f, " +
+                    "expected result = %f", calcAverageOfPeople(data, FAT_PEOPLE), expectedResults);
         else System.out.println("Error");
     }
 }
