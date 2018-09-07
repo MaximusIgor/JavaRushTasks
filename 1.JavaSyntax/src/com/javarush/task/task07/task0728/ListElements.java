@@ -13,7 +13,7 @@ public class ListElements {
 
         Iterator<String> iterator = list.iterator();//получение итератора для списка
 
-        while (iterator.hasNext())      //проверка, есть ли ещё элементы
+        while (iterator.hasNext()) //проверка, есть ли ещё элементы
         {
             //получение текущего элемента и переход на следующий
             String text = iterator.next();
