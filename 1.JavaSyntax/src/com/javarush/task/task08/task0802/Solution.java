@@ -10,6 +10,6 @@ import java.util.Map;
 public class Solution {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
-
+//        HashMap<String,String> map = new Map<String,String>();
     }
 }
