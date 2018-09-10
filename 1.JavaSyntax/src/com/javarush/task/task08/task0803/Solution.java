@@ -8,7 +8,7 @@ import java.util.Map;
 */
 
 public class Solution {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         String[] cats = new String[]{"васька", "мурка", "дымка", "рыжик", "серый", "снежок", "босс", "борис", "визя", "гарфи"};
 
         HashMap<String, Cat> map = addCatsToMap(cats);
