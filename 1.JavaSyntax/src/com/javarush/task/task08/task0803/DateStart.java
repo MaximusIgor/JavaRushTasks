@@ -11,7 +11,7 @@ public class DateStart {
         Date currentTime = new Date();
 
         if (currentTime.after(endDate)) { // проверяем что время currentTime после endDate
-            System.out.println("End time!");
+            System.out.println("End time!"); // выводим на экран
         }
     }
 }
