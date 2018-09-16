@@ -25,6 +25,7 @@ public class AnonDemo2 {
         frame.getContentPane().add(panel);
 
         // отобразить фрейм
+
         frame.pack();
         frame.setVisible(true);
     }
