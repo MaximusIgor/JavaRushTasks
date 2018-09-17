@@ -27,6 +27,9 @@ public class Solution {
 
     public static void insert10000(List list) {
         //напишите тут ваш код
+        for (int i = 0; i < 10000 ; i++) {
+
+        }
 
     }
 
