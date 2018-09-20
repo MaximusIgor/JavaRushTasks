@@ -18,16 +18,21 @@ public class Solution {
         }
 
         int max = 1;
+
         for (int i = 0; i < list.size(); i++) {
             int n = 1;
             for (int j = i + 1; j < list.size(); j++) {
                 if (list.get(i).equals(list.get(j))) {
-                    n = n + 1;
-                    if (n > max) max = n;
+                    n++;
+                    if (n > max) {
+                        max = n;
+                    }
+                } else {
+                    break;
                 }
-                else break;
             }
         }
+        System.out.println();
         System.out.print(max);
     }
 }
