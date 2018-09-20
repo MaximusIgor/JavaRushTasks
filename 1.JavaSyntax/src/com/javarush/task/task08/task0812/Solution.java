@@ -16,18 +16,7 @@ public class Solution {
         for (int i = 0; i < 10; i++) {
             list.add(Integer.parseInt(reader.readLine()));
         }
-//        int tmp = 0, record = 0;
-//        for (int i = 0; i < list.size(); i++) {
-//            for (int j = i; j < list.size(); j++) {
-//                if (list.get(i).equals(list.get(j))) {
-//                    tmp++;
-//                } else {
-//                    if(tmp > record) record=tmp;
-//                    tmp = 0;
-//                }
-//            }
-//        }
-//        System.out.println(record);
+
         int max = 1;
         for (int i = 0; i < list.size(); i++) {
             int n = 1;
