@@ -39,8 +39,8 @@ public class Solution {
         //напишите тут ваш код
         Iterator<Integer> it = set.iterator();
         while( it.hasNext()){
-            Integer next = it.next();
-            if(next > 10){
+
+            if(it.next() > 10){
                 it.remove();
             }
         }
