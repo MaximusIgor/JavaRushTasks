@@ -13,6 +13,8 @@ public class MapElements {
         map.put("second", "Mila");
         map.put("third", "Ramu");
 
+        System.out.println(map);
+
         Iterator<Map.Entry<String, String>> iterator = map.entrySet().iterator();
 
         while (iterator.hasNext())
